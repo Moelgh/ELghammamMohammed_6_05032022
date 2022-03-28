@@ -1,12 +1,14 @@
 const express = require('express');
-
-const app = express();
 const mongoose = require('mongoose');
-
-const sauceRoutes = require('./routes/sauce')
-const userRoutes = require('./routes/user');
 const path = require('path');
 
+
+require('dotenv').config({ path: process.cwd() + '/.env' });
+
+const sauceRoutes = require('./routes/sauce')
+const userRoutes = require('./routes/user')
+
+const app = express()
 
 mongoose.connect('mongodb+srv://mohelgh:3a4a5i2f5d@cluster0.d7xvl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   { useNewUrlParser: true,
